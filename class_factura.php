@@ -53,12 +53,20 @@ function set_data($datos){
 }//fin de set_data();
 
 function menbrete(){
+	//$pdf->Image('logo.png' , 80 ,22, 35 , 38,'PNG', '');
+	//                               L R
+	$this->Image('logo_menbrete.png',0,0,-120); //**********
 	$this->Ln(4);
 	$this->Ln(4);
+	$this->setY(50);$this->setX(36); $this->SetFont('Arial','B',9);// ****************
+	$this->write(1,utf8_decode("FECHA DE EMISIÓN"));// ****************
 	$this->setY(55);
-	$this->setX(40);
-	$this->Cell(24,7,$this->fecha,1,1,'c');
+	$this->setX(40); 
+	$this->Cell(24,7,$this->fecha,1,1,'C');
 
+	
+	$this->SetY(39);$this->SetX(80); // ****************
+	$this->Cell(100,7,"CLIENTE",1,1,'c'); // ***********
 	/*datos del cliente*/
 	$this->setY(48);
 	//$this->setx(75);
@@ -142,8 +150,8 @@ function detalle($productos){
 	/*iva*/
 	$montoIva=((($this->totalMontoBruto)*12)/100);
 	$this->setY(219);
-	$this->setX(144);
-	$this->Cell(6,5,'12',0,0,'c');
+	$this->setX(145); // *** 144
+	$this->Cell(6,5,'IVA 12 %   ',0,0,'C');// ***
 	if($montoIva>1000){
 		$this->cell(10);
 	$this->Cell(20,5,utf8_decode(number_format(($montoIva),2,",",".")),0,0,'c');
