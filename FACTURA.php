@@ -1,16 +1,16 @@
 <?php
 require('class_factura.php');
 
-$productos[]=array(	'cantidad' => 100,
-					'descripcion' => strtoupper("Estuches usos mixtos"),
-					'precioUnitario' =>60.00
+$productos[]=array(	'cantidad' => 3,
+					'descripcion' => strtoupper("Cartucho (GENERICO) XL #122 Negro"),
+					'precioUnitario' =>10714.29
 			);
 $nueva_factura = array(
-							'razon'			=>'Julio Vinachi',
-							'rif'			=>'V-18266159',
-							'direccion1'	=>'sector santa rita, urb. el valle',
-							'direccion2'	=>'Maracay, Edo. Aragua',
-							'fecha'			=>'19/11/2015',
+							'razon'			=>'COMPACTO C.A.',
+							'rif'			=>'J-30072142-6',
+							'direccion1'	=>'AV INTERCOMUNAL TURMERO LOCAL PARCELA NRO 33 SECTOR',
+							'direccion2'	=>'LA PROVIDENCIA, SAN JOAQUIN DE TURMERO ARAGUA ZONA POSTAL 210',
+							'fecha'			=>'28/11/2015',
 							'productos'		=>$productos
 						);
 

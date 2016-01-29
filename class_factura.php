@@ -56,9 +56,17 @@ function menbrete(){
 	//$pdf->Image('logo.png' , 80 ,22, 35 , 38,'PNG', '');
 	//                               L R
 	$this->Image('logo_menbrete.png',0,0,-120); //**********
+	$this->Ln(4);	
 	$this->Ln(4);
-	$this->Ln(4);
+
+	$this->setY(40); $this->setX(15); 
+	$this->write(1,utf8_decode("FACTURA"));// ****************
+	$this->SetTextColor(255,0,0);
+	$this->write(1,utf8_decode("   Nº 000126"));// ****************
+	$this->SetTextColor(0,0,0);
+
 	$this->setY(50);$this->setX(36); $this->SetFont('Arial','B',9);// ****************
+
 	$this->write(1,utf8_decode("FECHA DE EMISIÓN"));// ****************
 	$this->setY(55);
 	$this->setX(40); 
@@ -83,6 +91,24 @@ function menbrete(){
 	$this->cell(70);
 	$this->Cell(100,4,utf8_decode($this->direccion2),0,0,'c');
 
+	$this->SetY(80);$this->SetX(15);$this->SetFont('Arial','B',10);
+	$this->write(1,utf8_decode("PRODUCTOS Y SERVICIOS"));// ****************
+
+
+	$this->setY(80); $this->setX(142); 
+	$this->write(1,utf8_decode("CONTROL 00-"));// ****************
+	$this->SetTextColor(255,0,0);
+	$this->write(1,utf8_decode("   Nº 000126"));// ****************
+	$this->SetTextColor(0,0,0);
+
+	$this->Ln(5);$this->SetX(15);$this->SetFont('Arial','',8);
+	$this->write(1,utf8_decode("Cantidad"));// ****************
+	$this->SetX(40);
+	$this->write(1,utf8_decode("Descripción"));
+	$this->SetX(140);
+	$this->write(1,utf8_decode("Precio Unitario"));
+	$this->SetX(172);
+	$this->write(1,utf8_decode("TOTALES"));
 } // fin de funcion menbrete()
 
 function detalle($productos){
