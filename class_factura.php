@@ -34,16 +34,16 @@ class Factura extends FPDF{
 
 
 class PDF extends FPDF{
-	var $razon		="";
-	var $rif		="";
+	var $razon	="";
+	var $rif	="";
 	var $direccion1	="";
 	var $direccion2	="";
-	var $fecha		="";
+	var $fecha	="";
 	var $productos	=NULL;
 	var $totalMontoBruto=0;
 
-function set_data($datos){
-
+function set_data($datos)
+{
 		$this->razon=$datos['razon'];
 		$this->rif=$datos['rif'];
 		$this->direccion1=$datos['direccion1'];
@@ -52,7 +52,8 @@ function set_data($datos){
 		$this->productos=$datos['productos'];
 }//fin de set_data();
 
-function menbrete(){
+function menbrete()
+{
 	$this->Ln(4);
 	$this->Ln(4);
 	$this->setY(55);
@@ -77,59 +78,68 @@ function menbrete(){
 
 } // fin de funcion menbrete()
 
-function detalle($productos){
+function detalle($productos)
+{
 
 	$this->SetFont('Arial','',12);
 	$this->setX(10);
 	$this->setY(90);
 	//$this->Ln(4);
-	for ($i=0; $i <count($productos) ; $i++) {
-	$this->cell(8);
-	if($productos[$i]['cantidad']==0){
-		$this->Cell(10,5,'',0,1,'c');
-
-	}else{
-		$this->Cell(10,5,utf8_decode($productos[$i]['cantidad']),0,1,'c');
-		}
-	$this->Ln(2);
+	for ($i=0; $i <count($productos) ; $i++) 
+	{
+		$this->cell(8);		
+			if($productos[$i]['cantidad']==0)
+			{
+				$this->Cell(10,5,'',0,1,'c');
+			}else{
+				$this->Cell(10,5,utf8_decode($productos[$i]['cantidad']),0,1,'c');
+			     }
+		$this->Ln(2);
 	}
+	
 	$this->setX(10);
 	$this->setY(90);
-	for ($i=0; $i <count($productos) ; $i++) {
-	$this->cell(20);
-	$this->Cell(90,5,utf8_decode($productos[$i]['descripcion']),0,1,'c');
-	$this->Ln(2);
+	
+	for ($i=0; $i <count($productos) ; $i++) 
+	{
+		$this->cell(20);
+		$this->Cell(90,5,utf8_decode($productos[$i]['descripcion']),0,1,'c');
+		$this->Ln(2);
 	}
 
 	$this->setX(10);
 	$this->setY(90);
-	for ($i=0; $i <count($productos) ; $i++) {
-	$this->cell(139);
-	if($productos[$i]['precioUnitario']==0){
-		$this->Cell(15,5,'',0,1,'c');
+	
+	for ($i=0; $i <count($productos) ; $i++) 
+	{
+		$this->cell(139);
+			if($productos[$i]['precioUnitario']==0)
+			{
+				$this->Cell(15,5,'',0,1,'c');
 
-	}else{
-		$this->Cell(15,5,utf8_decode(number_format($productos[$i]['precioUnitario'],2,",",".")),0,1,'R');
-	}
-	$this->Ln(2);
+			}else{
+				$this->Cell(15,5,utf8_decode(number_format($productos[$i]['precioUnitario'],2,",",".")),0,1,'R');
+			}
+		$this->Ln(2);
 	}
 
 	$this->setX(10);
 	$this->setY(90);
 	$montobrutoproducto=0;
-	for ($i=0; $i <count($productos) ; $i++) {
-	$this->cell(162);
-	$montobrutoproducto=($productos[$i]['precioUnitario']*$productos[$i]['cantidad']);
+	
+	for ($i=0; $i <count($productos) ; $i++) 
+	{
+		$this->cell(162);
+		$montobrutoproducto=($productos[$i]['precioUnitario']*$productos[$i]['cantidad']);
 
-	$this->totalMontoBruto+=$montobrutoproducto;
-	if($montobrutoproducto==0){
-			$this->Cell(15,5,'',0,1,'c');
-
-	}else{
-
-			$this->Cell(15,5,utf8_decode(number_format(($montobrutoproducto),2,",",".")),0,1,'R');
-	}
-	$this->Ln(2);
+		$this->totalMontoBruto+=$montobrutoproducto;
+			if($montobrutoproducto==0)
+			{
+				$this->Cell(15,5,'',0,1,'c');
+			}else{
+				$this->Cell(15,5,utf8_decode(number_format(($montobrutoproducto),2,",",".")),0,1,'R');
+			}
+		$this->Ln(2);
 	}
 
 	$cordX=159;
