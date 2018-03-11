@@ -1,6 +1,6 @@
 {
 	"name": "julio899/factura_ktux",
-    	"type": "library",
+	"type": "library",
 	"description": "Formato Basico cuadrado al talonario de factura fiscal",
 	"homepage": "https://www.ktuxca.com",
 	"license": "LGPL-3.0",
@@ -8,10 +8,10 @@
 		"name": "Julio Vinachi",
 		"email": "julio899@gmail.com"
 	}],
-    	"support": {
-        		"issues": "https://github.com/julio899/factura_ktux/issues",
-        		"source": "https://github.com/julio899/factura_ktux/tree/master",
-        },
+	"support": {
+		"issues": "https://github.com/julio899/factura_ktux/issues",
+		"source": "https://github.com/julio899/factura_ktux/tree/master"
+	},
 	"require": {
 		"setasign/fpdf": "1.7"
 	}
