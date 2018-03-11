@@ -1,15 +1,13 @@
 {
-    name": "julio899/factura_ktux",
-    "description": "Formato Basico cuadrado al talonario de factura fiscal",
-    "homepage": "https://www.ktuxca.com",
-    "license": "LGPL-3.0",
-    "authors": [
-        {
-            "name": "Julio Vinachi",
-            "email": "julio899@gmail.com"
-        }
-    ],
-    "require": {
-        "setasign/fpdf": "1.7"
-    }
+	"name": "julio899/factura_ktux",
+	"description": "Formato Basico cuadrado al talonario de factura fiscal",
+	"homepage": "https://www.ktuxca.com",
+	"license": "LGPL-3.0",
+	"authors": [{
+		"name": "Julio Vinachi",
+		"email": "julio899@gmail.com"
+	}],
+	"require": {
+		"setasign/fpdf": "1.7"
+	}
 }
