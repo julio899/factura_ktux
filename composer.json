@@ -12,6 +12,13 @@
 		"issues": "https://github.com/julio899/factura_ktux/issues",
 		"source": "https://github.com/julio899/factura_ktux/tree/master"
 	},
+	"repositories": [
+		{
+		    "type": "vcs",
+		    "url": "git@github.com:julio899/factura_ktux.git"
+		}
+    	],
+    
 	"require": {
 		"setasign/fpdf": "1.7"
 	}
