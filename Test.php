@@ -1,5 +1,4 @@
 <?php use ktux\models\FacturaModel as FacturaModel;
-//use vendor\setasign\fpdf as FPDF;
 require_once('vendor/autoload.php');
 /* Probador */
 $productos[]=array(	'cantidad' => 100,
