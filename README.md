@@ -5,11 +5,10 @@ Migrando al standar psr-4
 
 depende de la libreria fpdf "setasign/fpdf": "1.7"
 *(Pendiente a estandarizar a psr4  o psr0)
-* agregada a (like https://packagist.org/packages/julio899/factura_ktux) para el uso con composer
-*** composer require julio899/factura_ktux **
-	> instalar composer
-	> correr composer install
-
+* para el uso con composer ( https://packagist.org/packages/julio899/factura_ktux) 
+* composer require julio899/factura_ktux
+	# instalar composer
+	## correr composer install
 ```
 require_once('vendor/autoload.php');
 use ktux\models\FacturaModel as FacturaKtux;
@@ -27,6 +26,6 @@ $nueva_factura = array(
 						'fecha'		=>'19/11/2015',
 						'productos'	=>$productos
 		      );
-		      
+
 $f = new FacturaKtux($nueva_factura);
 ```
