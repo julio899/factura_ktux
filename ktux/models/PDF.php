@@ -1,5 +1,14 @@
 <?php namespace ktux\models;
  use FPDF;
+
+/*******************************************************************************
+* Librerias Usadas FPDF                                                        *
+*                                                                              *
+* Version: 0.1                                                                 *
+* Date:    2018-03-11                                                          *
+* Author:  Julio Vinachi                                                       *
+* Modelo de Talonario de facturacion de K-TUX,C.A.                             *
+*******************************************************************************/
 class PDF extends FPDF{
 	var $razon	="";
 	var $rif	="";
