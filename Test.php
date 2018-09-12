@@ -8,7 +8,7 @@ $productos[]=array(	'cantidad' => 100,
 
 $nueva_factura = array(
 			'razon'		=>'Julio Vinachi',
-			'rif'		=>'V-18266159',
+			'rif'		=>'V-12345678',
 			'direccion1'	=>'sector santa rita, urb. el valle',
 			'direccion2'	=>'Maracay, Edo. Aragua',
 			'fecha'		=>'19/11/2015',
