@@ -36,6 +36,7 @@ class Factura extends FPDF{
 class PDF extends FPDF{
 	var $razon		="";
 	var $rif		="";
+	var $nro		="";
 	var $direccion1	="";
 	var $direccion2	="";
 	var $fecha		="";
@@ -46,6 +47,7 @@ function set_data($datos){
 
 		$this->razon=$datos['razon'];
 		$this->rif=$datos['rif'];
+		$this->nro=$datos['nro'];
 		$this->direccion1=$datos['direccion1'];
 		$this->direccion2=$datos['direccion2'];
 		$this->fecha=$datos['fecha'];
@@ -60,9 +62,9 @@ function menbrete(){
 	$this->Ln(4);
 
 	$this->setY(40); $this->setX(15); 
-	$this->write(1,utf8_decode("FACTURA"));// ****************
+	$this->write(1,utf8_decode("RECIBO"));// FACTURA ****************
 	$this->SetTextColor(255,0,0);
-	$this->write(1,utf8_decode("   Nº 000126"));// ****************
+	$this->write(1,utf8_decode("   Nº 000".$this->nro));// ****************
 	$this->SetTextColor(0,0,0);
 
 	$this->setY(50);$this->setX(36); $this->SetFont('Arial','B',9);// ****************
@@ -83,7 +85,7 @@ function menbrete(){
 	$this->Cell(100,4,utf8_decode('Nombre o Razón Social: '.$this->razon),0,0,'c');
 	$this->Ln(4);
 	$this->cell(70);
-	$this->Cell(100,4,utf8_decode('Cedula o Rif:'.$this->rif),0,0,'c');
+	$this->Cell(100,4,utf8_decode('RFC:'.$this->rif),0,0,'c');// Cedula o Rif/Nif
 	$this->Ln(4);
 	$this->cell(70);
 	$this->Cell(100,4,utf8_decode('Dirección: '.$this->direccion1),0,0,'c');
@@ -98,7 +100,7 @@ function menbrete(){
 	$this->setY(80); $this->setX(142); 
 	$this->write(1,utf8_decode("CONTROL 00-"));// ****************
 	$this->SetTextColor(255,0,0);
-	$this->write(1,utf8_decode("   Nº 000126"));// ****************
+	$this->write(1,utf8_decode("   Nº 000".$this->nro));// ****************
 	$this->SetTextColor(0,0,0);
 
 	$this->Ln(5);$this->SetX(15);$this->SetFont('Arial','',8);
@@ -166,33 +168,33 @@ function detalle($productos){
 	$this->Ln(2);
 	}
 
-	$cordX=159;
+	$cordX=145;
 	$this->setY(202);
 	$this->setX($cordX);
 	/*subtotal*/
-	$this->Cell(20,5,utf8_decode(number_format(($this->totalMontoBruto),2,",",".")),0,0,'c');
+	$this->Cell(20,5,'TOTAL '.utf8_decode(number_format(($this->totalMontoBruto),2,",",".")) .' USD',0,0,'c');
 	//$this->Ln(18);
 
-	/*iva*/
-	$montoIva=((($this->totalMontoBruto)*12)/100);
-	$this->setY(219);
-	$this->setX(145); // *** 144
-	$this->Cell(6,5,'IVA 12 %   ',0,0,'C');// ***
-	if($montoIva>1000){
-		$this->cell(10);
-	$this->Cell(20,5,utf8_decode(number_format(($montoIva),2,",",".")),0,0,'c');
-	}else{
-	$this->cell(11);
-	$this->Cell(20,5,utf8_decode(number_format(($montoIva),2,",",".")),0,0,'c');
+	// /*iva*/
+	// $montoIva=((($this->totalMontoBruto)*12)/100);
+	// $this->setY(219);
+	// $this->setX(145); // *** 144
+	// $this->Cell(6,5,'IVA 12 %   ',0,0,'C');// ***
+	// if($montoIva>1000){
+	// 	$this->cell(10);
+	// $this->Cell(20,5,utf8_decode(number_format(($montoIva),2,",",".")),0,0,'c');
+	// }else{
+	// $this->cell(11);
+	// $this->Cell(20,5,utf8_decode(number_format(($montoIva),2,",",".")),0,0,'c');
 
-	}
+	// }
 
-	/*TOTAL a pagar*/
-	$total=($this->totalMontoBruto+$montoIva);
-	$this->setY(227);
-	$this->setX($cordX);
-	$this->SetFont('Arial','B',12);
-	$this->Cell(20,5,utf8_decode(number_format(($total),2,",",".")),0,0,'c');
+	// /*TOTAL a pagar*/
+	// $total=($this->totalMontoBruto+$montoIva);
+	// $this->setY(227);
+	// $this->setX($cordX);
+	// $this->SetFont('Arial','B',12);
+	// $this->Cell(20,5,utf8_decode(number_format(($total),2,",",".")),0,0,'c');
 } // fin de funcion detalle($productos)
 
 }

@@ -10,7 +10,7 @@ $nueva_factura = array(
 							'rif'			=>'NEO220704EP6',
 							'direccion1'	=>'Lago Alberto 320 2512, Anahuac I Secc.',
 							'direccion2'	=>'Miguel Hidalgo, CP 11320. CDMX.',
-							'fecha'			=>'31/11/2023', // '29/09/2023',
+							'fecha'			=>'30/11/2023', // '29/09/2023',
 							'productos'		=>$productos,
 							'nro'			=> '129',
 						);

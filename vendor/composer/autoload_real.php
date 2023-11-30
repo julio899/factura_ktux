@@ -13,6 +13,9 @@ class ComposerAutoloaderInita2430da9b67421e7421a8df320fee978
         }
     }
 
+    /**
+     * @return \Composer\Autoload\ClassLoader
+     */
     public static function getLoader()
     {
         if (null !== self::$loader) {
@@ -20,23 +23,11 @@ class ComposerAutoloaderInita2430da9b67421e7421a8df320fee978
         }
 
         spl_autoload_register(array('ComposerAutoloaderInita2430da9b67421e7421a8df320fee978', 'loadClassLoader'), true, true);
-        self::$loader = $loader = new \Composer\Autoload\ClassLoader();
+        self::$loader = $loader = new \Composer\Autoload\ClassLoader(\dirname(__DIR__));
         spl_autoload_unregister(array('ComposerAutoloaderInita2430da9b67421e7421a8df320fee978', 'loadClassLoader'));
 
-        $map = require __DIR__ . '/autoload_namespaces.php';
-        foreach ($map as $namespace => $path) {
-            $loader->set($namespace, $path);
-        }
-
-        $map = require __DIR__ . '/autoload_psr4.php';
-        foreach ($map as $namespace => $path) {
-            $loader->setPsr4($namespace, $path);
-        }
-
-        $classMap = require __DIR__ . '/autoload_classmap.php';
-        if ($classMap) {
-            $loader->addClassMap($classMap);
-        }
+        require __DIR__ . '/autoload_static.php';
+        call_user_func(\Composer\Autoload\ComposerStaticInita2430da9b67421e7421a8df320fee978::getInitializer($loader));
 
         $loader->register(true);
 
