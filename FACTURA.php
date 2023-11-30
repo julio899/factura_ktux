@@ -1,17 +1,18 @@
 <?php
 require('class_factura.php');
 
-$productos[]=array(	'cantidad' => 3,
-					'descripcion' => strtoupper("Cartucho (GENERICO) XL #122 Negro"),
-					'precioUnitario' =>10714.29
+$productos[]=array(	'cantidad' => 1,
+					'descripcion' => strtoupper("Servicios de desarrollo de software"),
+					'precioUnitario' =>1000.00
 			);
 $nueva_factura = array(
-							'razon'			=>'COMPACTO C.A.',
-							'rif'			=>'J-30072142-6',
-							'direccion1'	=>'AV INTERCOMUNAL TURMERO LOCAL PARCELA NRO 33 SECTOR',
-							'direccion2'	=>'LA PROVIDENCIA, SAN JOAQUIN DE TURMERO ARAGUA ZONA POSTAL 210',
-							'fecha'			=>'28/11/2015',
-							'productos'		=>$productos
+							'razon'			=>'Neogaleno S A de C V',
+							'rif'			=>'NEO220704EP6',
+							'direccion1'	=>'Lago Alberto 320 2512, Anahuac I Secc.',
+							'direccion2'	=>'Miguel Hidalgo, CP 11320. CDMX.',
+							'fecha'			=>'31/11/2023', // '29/09/2023',
+							'productos'		=>$productos,
+							'nro'			=> '129',
 						);
 
 new Factura($nueva_factura);
