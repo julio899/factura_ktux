@@ -1,0 +1,27 @@
+services:
+  webserver:
+    image: php:7.2.3-apache
+    ports:
+      - "7070:80"
+    build:
+        context: .
+        # dockerfile: ./Dockerfile
+        dockerfile: ./php.Dockerfile
+    environment:
+      - PHP.display_errors=On
+      - PHP.error_reporting=-1
+      - PHPFPM_XDEBUG=On
+    volumes:
+      - ./:/var/www/html
+
+
+# INSTALL ZIP TO USE COMPOSER
+#RUN apt-get update && apt-get install -y \
+#    zlib1g-dev \
+#    libzip-dev \
+#    unzip
+#RUN docker-php-ext-install zip
+# INSTALL AND UPDATE COMPOSER
+#COPY --from=composer /usr/bin/composer /usr/bin/composer
+#RUN composer self-update
+# docker-compose up -d

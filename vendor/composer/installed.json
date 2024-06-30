@@ -40,6 +40,9 @@
                 "fpdf",
                 "pdf"
             ],
+            "support": {
+                "source": "https://github.com/Setasign/FPDF/tree/1.7"
+            },
             "install-path": "../setasign/fpdf"
         }
     ],
