@@ -53,3 +53,18 @@ sudo docker exec -it php-7-4-web-server /bin/bash
 
 # pase de archivos
     > docker cp FACTURA.php factura_ktux-webserver-1:/var/www/html/index.php
+
+
+
+# RUN TEST
+// -- docker run -d -p 8000:80 --name test php:7-apache -v "$PWD":/var/www/html
+// -- docker run -d --name factura -p 7070:80 factura:latest
+// -- docker run factura:latest
+
+# RUNING OK
+docker-compose up -d
+http://localhost:7070
+
+# docker container
+image: php:7.2.3-apache
+container: factura_ktux-webserver-1
