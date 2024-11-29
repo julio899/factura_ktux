@@ -68,3 +68,10 @@ http://localhost:7070
 # docker container
 image: php:7.2.3-apache
 container: factura_ktux-webserver-1
+
+---
+
+# AJUSTE A PUERTO 8080 con Dokerfile
+
+   > dockebuild -t factura .
+   > docker run -d -p 8080:8080 --net app --name facturaTest factura:latest

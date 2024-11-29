@@ -1,2 +1,3 @@
 <?php
-	include('FACTURA.php');
+	phpinfo();
+	// include('FACTURA.php');
