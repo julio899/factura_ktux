@@ -73,5 +73,5 @@ container: factura_ktux-webserver-1
 
 # AJUSTE A PUERTO 8080 con Dokerfile
 
-   > dockebuild -t factura .
-   > docker run -d -p 8080:8080 --net app --name facturaTest factura:latest
+   > docker build -t factura .
+   > docker run -d -p 8080:8080 -v ./FACTURA.php:/var/www/html/FACTURA.php --net app --name facturaTest factura:latest
