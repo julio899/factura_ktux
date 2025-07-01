@@ -75,3 +75,9 @@ container: factura_ktux-webserver-1
 
    > docker build -t factura .
    > docker run -d -p 8080:8080 -v ./FACTURA.php:/var/www/html/FACTURA.php --net app --name facturaTest factura:latest
+
+# RUNNING OK
+# 30-06-2025
+# 1 - docker build -t factura .
+# 2 - docker run -d --name factura -v $(pwd):/var/www/html -p 8084:8084 factura:latest
+# 3 - http://localhost:8084

@@ -12,9 +12,9 @@ $nueva_factura = array(
 							'rif'			=>'NEO220704EP6',
 							'direccion1'	=>'Lago Alberto 320 2512, Anahuac I Secc.',
 							'direccion2'	=>'Miguel Hidalgo, CP 11320. CDMX.',
-							'fecha'			=>'30/05/2025',
+							'fecha'			=>'30/06/2025',
 							'productos'		=>$productos,
-							'nro'			=> '148',
+							'nro'			=> '149',
 						);
 
 new Factura($nueva_factura);

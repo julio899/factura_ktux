@@ -18,11 +18,11 @@ RUN composer dump-autoload
 # USER www-data
 # EXPOSE 80
 # EXPOSE 7070
-EXPOSE 8080
+EXPOSE 8084
 # CMD ["php", "-v"]
 # CMD ["composer", "-v"]
 # CMD ["php", "FACTURA.php"]
-CMD ["php","-S","0.0.0.0:8080","FACTURA.php"]
+CMD ["php","-S","0.0.0.0:8084","FACTURA.php"]
 # CMD ["php", "index.php"]
 
 # CMD ["php-fpm", "/var/www/html/FACTURA.php"]
@@ -30,7 +30,7 @@ CMD ["php","-S","0.0.0.0:8080","FACTURA.php"]
 # CMD ["composer", "dump-autoload"]
 
 # 1 - docker build -t factura .
-# 2 - docker run -d --name factura -p 7070:80 factura:latest
+# 2 - docker run -d --name factura -v $(pwd):/var/www/html -p 8084:8084 factura:latest
 # docker run -dp 127.0.0.1:7070:7070 factura:latest -v $(pwd):/var/www/html
 # docker run -it --rm --name facturaTest factura:latest
 # --host=0.0.0.0
