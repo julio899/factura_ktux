@@ -56,28 +56,8 @@ sudo docker exec -it php-7-4-web-server /bin/bash
 
 
 
-# RUN TEST
-// -- docker run -d -p 8000:80 --name test php:7-apache -v "$PWD":/var/www/html
-// -- docker run -d --name factura -p 7070:80 factura:latest
-// -- docker run factura:latest
-
-# RUNING OK
-docker-compose up -d
-http://localhost:7070
-
-# docker container
-image: php:7.2.3-apache
-container: factura_ktux-webserver-1
-
----
-
-# AJUSTE A PUERTO 8080 con Dokerfile
-
-   > docker build -t factura .
-   > docker run -d -p 8080:8080 -v ./FACTURA.php:/var/www/html/FACTURA.php --net app --name facturaTest factura:latest
-
 # RUNNING OK
-# 30-06-2025
+# 01-12-2025
 # 1 - docker build -t factura .
 # 2 - docker run -d --name factura -v $(pwd):/var/www/html -p 8084:8084 factura:latest
 # 3 - http://localhost:8084
