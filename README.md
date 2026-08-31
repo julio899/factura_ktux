@@ -61,3 +61,9 @@ sudo docker exec -it php-7-4-web-server /bin/bash
 # 1 - docker build -t factura .
 # 2 - docker run -d --name factura -v $(pwd):/var/www/html -p 8084:8084 factura:latest
 # 3 - http://localhost:8084
+
+
+# 31-08-2026 RUNING OK
+
+> sudo docker-compose up --build -d
+    - http://localhost:8084/
